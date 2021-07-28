@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import { AppDispatch } from '../../state'
 import { useRemovePopup } from '../../state/application/hooks'
 import { acceptListUpdate } from '../../state/lists/actions'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import listVersionLabel from '../../utils/listVersionLabel'
 import { ButtonSecondary } from '../ButtonLegacy'
 import { AutoColumn } from '../Column'
@@ -30,7 +30,7 @@ export default function ListUpdatePopup({
     oldList: TokenList
     newList: TokenList
     auto: boolean
-}) {
+}): JSX.Element {
     const removePopup = useRemovePopup()
     const removeThisPopup = useCallback(() => removePopup(popKey), [popKey, removePopup])
     const dispatch = useDispatch<AppDispatch>()
@@ -62,10 +62,10 @@ export default function ListUpdatePopup({
         <AutoRow>
             <AutoColumn style={{ flex: '1' }} gap="8px">
                 {auto ? (
-                    <TYPE.body fontWeight={500}>
+                    <Type.Body fontWeight={500}>
                         The token list &quot;{oldList.name}&quot; has been updated to{' '}
                         <strong>{listVersionLabel(newList.version)}</strong>.
-                    </TYPE.body>
+                    </Type.Body>
                 ) : (
                     <>
                         <div>

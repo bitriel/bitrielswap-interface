@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from '@sushiswap/sdk'
+import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from '@bitrielswap/sdk'
 import { LightGreyCard } from 'components/CardLegacy'
 import QuestionHelper from 'components/QuestionHelper'
 import useTheme from 'hooks/useTheme'
@@ -12,7 +12,7 @@ import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useAllInactiveTokens, useIsUserAddedToken } from '../../hooks/Tokens'
 import { useCombinedActiveList, WrappedTokenInfo } from '../../state/lists/hooks'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import { isTokenOnList } from '../../utils'
 import Column from '../Column'
 import CurrencyLogo from '../CurrencyLogo'
@@ -131,9 +131,9 @@ function CurrencyRow({
                 <Text title={currency.getName(chainId)} fontWeight={500}>
                     {currency.getSymbol(chainId)}
                 </Text>
-                <TYPE.darkGray ml="0px" fontSize={'12px'} fontWeight={300}>
+                <Type.DarkGray ml="0px" fontSize={'12px'} fontWeight={300}>
                     {currency.getName(chainId)} {!isOnSelectedList && customAdded && '• Added by user'}
-                </TYPE.darkGray>
+                </Type.DarkGray>
             </Column>
             <TokenTags currency={currency} />
             <RowFixed style={{ justifySelf: 'flex-end' }}>
@@ -165,7 +165,7 @@ export default function CurrencyList({
     showImportView: () => void
     setImportToken: (token: Token) => void
     breakIndex: number | undefined
-}) {
+}): JSX.Element {
     const itemData: (Currency | undefined)[] = useMemo(() => {
         let formatted: (Currency | undefined)[] = showETH ? [Currency.ETHER, ...currencies] : currencies
         if (breakIndex !== undefined) {
@@ -199,9 +199,9 @@ export default function CurrencyList({
                             <RowBetween>
                                 <RowFixed>
                                     <TokenListLogoWrapper src={TokenListLogo} />
-                                    <TYPE.main ml="6px" fontSize="12px" color={theme.text1}>
+                                    <Type.Main ml="6px" fontSize="12px" color={theme.text1}>
                                         Expanded results from inactive Token Lists
-                                    </TYPE.main>
+                                    </Type.Main>
                                 </RowFixed>
                                 <QuestionHelper text="Tokens from inactive lists. Import specific tokens below or click 'Manage' to activate more lists." />
                             </RowBetween>

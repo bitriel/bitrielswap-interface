@@ -5,7 +5,7 @@ import { AutoColumn } from '../../components/Column'
 import { RowBetween } from '../../components/Row'
 import { Wrapper } from '../../components/swap/styleds'
 import { useDarkModeManager } from '../../state/user/hooks'
-import { ExternalLink, TYPE } from '../../theme'
+import { ExternalLink, Type } from '../../theme'
 import AXSushiBalancePanel from './AXSushiBalancePanel'
 import SaaveHeader from './SaaveHeader'
 import SushiInputPanel from './SushiInputPanel'
@@ -54,41 +54,41 @@ export default function Saave() {
                     <CardSection>
                         <AutoColumn gap="md">
                             <RowBetween>
-                                <TYPE.white fontWeight={600} color={theme.text1}>
+                                <Type.White fontWeight={600} color={theme.text1}>
                                     {i18n._(t`SAAVE: Stack your yields in one transaction`)}
-                                </TYPE.white>
+                                </Type.White>
                             </RowBetween>
                             <RowBetween>
-                                <TYPE.white fontSize={14} color={theme.text2}>
+                                <Type.White fontSize={14} color={theme.text2}>
                                     {i18n._(
                                         t`Stake your SUSHI into xSUSHI for ~5% APY. Deposit your xSUSHI into Aave as aXSUSHI to earn collateral interest and borrowing power. All in one click.`
                                     )}
-                                </TYPE.white>
+                                </Type.White>
                             </RowBetween>
                             <ExternalLink
                                 style={{ color: `${darkMode ? 'white' : 'black'}`, textDecoration: 'underline' }}
                                 target="_blank"
                                 href="https://app.ens.domains/name/saave.eth"
                             >
-                                <TYPE.white fontSize={14} color={theme.text1}>
+                                <Type.White fontSize={14} color={theme.text1}>
                                     {i18n._(t`Keys Burned: 2022.03.04 at 22:05`)}
-                                </TYPE.white>
+                                </Type.White>
                             </ExternalLink>
                             <ExternalLink
                                 style={{ color: `${darkMode ? 'white' : 'black'}`, textDecoration: 'underline' }}
                                 target="_blank"
                                 href="https://etherscan.io/address/0x364762c00b32c4b448f39efaa9cefc67a25603ff#code"
                             >
-                                <TYPE.white fontSize={14} color={theme.text1}>
+                                <Type.White fontSize={14} color={theme.text1}>
                                     {i18n._(t`Read the contract`)}
-                                </TYPE.white>
+                                </Type.White>
                             </ExternalLink>
                             <RowBetween>
-                                <TYPE.white fontSize={14} color={theme.text2}>
+                                <Type.White fontSize={14} color={theme.text2}>
                                     {i18n._(
                                         t`To withdraw into SUSHI, go to Aave and remove axSUSHI as collateral and then to SushiBar to unstake. A full unwind will be avaialble soon.`
                                     )}
-                                </TYPE.white>
+                                </Type.White>
                             </RowBetween>
                         </AutoColumn>
                     </CardSection>

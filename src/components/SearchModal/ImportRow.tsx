@@ -1,4 +1,4 @@
-import { Token } from '@sushiswap/sdk'
+import { Token } from '@bitrielswap/sdk'
 import { ButtonPrimary } from 'components/ButtonLegacy'
 import { AutoColumn } from 'components/Column'
 import CurrencyLogo from 'components/CurrencyLogo'
@@ -11,7 +11,7 @@ import React, { CSSProperties } from 'react'
 import { CheckCircle } from 'react-feather'
 import { useCombinedInactiveList } from 'state/lists/hooks'
 import styled from 'styled-components'
-import { TYPE } from 'theme'
+import { Type } from 'theme'
 
 const TokenSection = styled.div<{ dim?: boolean }>`
     padding: 4px 20px;
@@ -52,7 +52,7 @@ export default function ImportRow({
     dim?: boolean
     showImportView: () => void
     setImportToken: (token: Token) => void
-}) {
+}): JSX.Element {
     // gloabls
     const { chainId } = useActiveWeb3React()
     const theme = useTheme()
@@ -70,16 +70,16 @@ export default function ImportRow({
             <CurrencyLogo currency={token} size={'24px'} style={{ opacity: dim ? '0.6' : '1' }} />
             <AutoColumn gap="4px" style={{ opacity: dim ? '0.6' : '1' }}>
                 <AutoRow>
-                    <TYPE.body fontWeight={500}>{token.symbol}</TYPE.body>
-                    <TYPE.darkGray ml="8px" fontWeight={300}>
+                    <Type.Body fontWeight={500}>{token.symbol}</Type.Body>
+                    <Type.DarkGray ml="8px" fontWeight={300}>
                         <NameOverflow title={token.name}>{token.name}</NameOverflow>
-                    </TYPE.darkGray>
+                    </Type.DarkGray>
                 </AutoRow>
                 {list && list.logoURI && (
                     <RowFixed>
-                        <TYPE.small mr="4px" color={theme.text3}>
+                        <Type.Small mr="4px" color={theme.text3}>
                             via {list.name}
-                        </TYPE.small>
+                        </Type.Small>
                         <ListLogo logoURI={list.logoURI} size="12px" />
                     </RowFixed>
                 )}
@@ -100,7 +100,7 @@ export default function ImportRow({
             ) : (
                 <RowFixed style={{ minWidth: 'fit-content' }}>
                     <CheckIcon />
-                    <TYPE.main color={theme.green1}>Active</TYPE.main>
+                    <Type.Main color={theme.green1}>Active</Type.Main>
                 </RowFixed>
             )}
         </TokenSection>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TYPE = {
+const Type = {
     information: {
         color: 'bg-purple bg-opacity-20 text-high-emphesis',
         icon: (
@@ -75,7 +75,7 @@ export default function Alert({
     if (!message) {
         return null
     }
-    const { color, icon } = TYPE[type]
+    const { color, icon } = Type[type]
     return (
         <div className={`${className} block w-full rounded text-sm p-4 ${color}`}>
             {title && <div className="text-2xl font-medium mb-1">{title}</div>}

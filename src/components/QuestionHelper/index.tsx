@@ -74,7 +74,7 @@ const QuestionHelper: FC<{ text: any }> = ({ children, text }) => {
     )
 }
 
-export const LightQuestionHelper = ({ text }: { text: string }) => {
+export const LightQuestionHelper = ({ text }: { text: string }): JSX.Element => {
     const [show, setShow] = useState<boolean>(false)
 
     const open = useCallback(() => setShow(true), [setShow])

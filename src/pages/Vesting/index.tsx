@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { TokenAmount } from '@sushiswap/sdk'
+import { TokenAmount } from '@bitrielswap/sdk'
 import { ButtonPrimary } from 'components/ButtonLegacy'
 import { LightCard } from 'components/CardLegacy'
 import { AutoColumn } from 'components/Column'
@@ -19,7 +19,7 @@ import { ApplicationModal } from '../../state/application/actions'
 import { useModalOpen, useToggleSelfClaimModal } from '../../state/application/hooks'
 import { useClaimCallback, useUserUnclaimedAmount } from '../../state/claim/hooks'
 import { useUserHasSubmittedClaim } from '../../state/transactions/hooks'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import { Helmet } from 'react-helmet'
 import { t, Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
@@ -169,9 +169,9 @@ export default function ClaimModal() {
                             <VoteCard>
                                 <CardSection gap="sm">
                                     <RowBetween>
-                                        <TYPE.white fontWeight={500} color={theme.text1}>
+                                        <Type.White fontWeight={500} color={theme.text1}>
                                             {i18n._(t`Community Approval`)}
-                                        </TYPE.white>
+                                        </Type.White>
                                     </RowBetween>
                                     <div
                                         className="text-sm text-gray-400 pt-2"
@@ -217,18 +217,18 @@ export default function ClaimModal() {
                             <VoteCard>
                                 <CardSection gap="sm">
                                     <RowBetween>
-                                        <TYPE.white fontWeight={500} color={theme.text1}>
+                                        <Type.White fontWeight={500} color={theme.text1}>
                                             {i18n._(t`Your Claimable SUSHI this Week`)}
-                                        </TYPE.white>
+                                        </Type.White>
                                         <QuestionHelper text="Your Vested SUSHI will be released each week for the next 6 months. The amount released each week is determined by your historical farming rewards. You do not need to harvest each week as unclaimed amounts from each week will continue to accrue onto the next." />
                                     </RowBetween>
                                     {/* <div style={{ display: 'flex', alignItems: 'baseline' }}> */}
                                     <div style={{ alignItems: 'baseline' }}>
-                                        <TYPE.white fontWeight={700} fontSize={36} color={theme.text1}>
+                                        <Type.White fontWeight={700} fontSize={36} color={theme.text1}>
                                             {unclaimedAmount?.toFixed(4, { groupSeparator: ',' } ?? '-')}
-                                        </TYPE.white>
+                                        </Type.White>
                                         {account ? (
-                                            <TYPE.white fontWeight={700} fontSize={14} color={theme.text3}>
+                                            <Type.White fontWeight={700} fontSize={14} color={theme.text3}>
                                                 {totalLocked ? (
                                                     i18n._(
                                                         t`Historical Total Locked: ${formattedNum(totalLocked)} SUSHI`
@@ -236,11 +236,11 @@ export default function ClaimModal() {
                                                 ) : (
                                                     <Dots>{i18n._(t`Historical Total Locked: Fetching Total`)}</Dots>
                                                 )}
-                                            </TYPE.white>
+                                            </Type.White>
                                         ) : (
-                                            <TYPE.white fontWeight={700} fontSize={14} color={theme.text3}>
+                                            <Type.White fontWeight={700} fontSize={14} color={theme.text3}>
                                                 {i18n._(t`Historical Total Locked: Connect Wallet`)}
-                                            </TYPE.white>
+                                            </Type.White>
                                         )}
                                     </div>
 
@@ -271,9 +271,9 @@ export default function ClaimModal() {
                             <VoteCard style={{ marginTop: '10px' }}>
                                 <CardSection gap="md">
                                     <RowBetween style={{ marginBottom: '5px' }}>
-                                        <TYPE.white fontWeight={500} color={theme.text1}>
+                                        <Type.White fontWeight={500} color={theme.text1}>
                                             {i18n._(t`Things you can do with your SUSHI`)}
-                                        </TYPE.white>
+                                        </Type.White>
                                     </RowBetween>
                                     <LightCard
                                         as={Link}
@@ -284,15 +284,15 @@ export default function ClaimModal() {
                                             <RowBetween>
                                                 <AutoRow>
                                                     <AutoRow marginBottom="2px">
-                                                        <TYPE.body fontWeight={500}>
+                                                        <Type.Body fontWeight={500}>
                                                             {i18n._(t`Stake SUSHI for xSUSHI`)}
-                                                        </TYPE.body>
+                                                        </Type.Body>
                                                     </AutoRow>
                                                     <AutoRow>
-                                                        <TYPE.darkGray fontSize=".75rem">
+                                                        <Type.DarkGray fontSize=".75rem">
                                                             {t`Gain governance rights with xSUSHI and earn 5% APR (0.05% of
                                                             all swaps from all chains)`}
-                                                        </TYPE.darkGray>
+                                                        </Type.DarkGray>
                                                     </AutoRow>
                                                 </AutoRow>
                                                 <ChevronRight />
@@ -308,15 +308,15 @@ export default function ClaimModal() {
                                             <RowBetween>
                                                 <AutoRow>
                                                     <AutoRow marginBottom="2px">
-                                                        <TYPE.body fontWeight={500}>
+                                                        <Type.Body fontWeight={500}>
                                                             {i18n._(t`Stack Yields with SAAVE`)}
-                                                        </TYPE.body>
+                                                        </Type.Body>
                                                     </AutoRow>
                                                     <AutoRow>
-                                                        <TYPE.darkGray fontSize=".75rem">
+                                                        <Type.DarkGray fontSize=".75rem">
                                                             {t`Stake into xSUSHI add collateral as axSUSHI on Aave all in
                                                             one click`}
-                                                        </TYPE.darkGray>
+                                                        </Type.DarkGray>
                                                     </AutoRow>
                                                 </AutoRow>
                                                 <ChevronRight />
@@ -328,15 +328,15 @@ export default function ClaimModal() {
                                             <RowBetween>
                                                 <AutoRow>
                                                     <AutoRow marginBottom="2px">
-                                                        <TYPE.body fontWeight={500}>
+                                                        <Type.Body fontWeight={500}>
                                                             {i18n._(t`Deposit SUSHI into BentoBox`)}
-                                                        </TYPE.body>
+                                                        </Type.Body>
                                                     </AutoRow>
                                                     <AutoRow>
-                                                        <TYPE.darkGray fontSize=".75rem">
+                                                        <Type.DarkGray fontSize=".75rem">
                                                             {t`(COMING SOON) Accrue automatic yield through flash loans and
                                                             SUSHI strategies`}
-                                                        </TYPE.darkGray>
+                                                        </Type.DarkGray>
                                                     </AutoRow>
                                                 </AutoRow>
                                                 {/* <ChevronRight /> */}

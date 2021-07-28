@@ -79,7 +79,7 @@
   },
   {
     "inputs": [],
-    "name": "PERMIT_TYPEHASH",
+    "name": "PERMIT_TypeHASH",
     "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
     "stateMutability": "view",
     "type": "function"

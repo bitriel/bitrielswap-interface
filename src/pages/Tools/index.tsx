@@ -9,7 +9,7 @@ import { AutoColumn } from '../../components/Column'
 import { SwapPoolTabs } from '../../components/NavigationTabs'
 import { RowBetween, RowFixed } from '../../components/Row'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
-import { ExternalLink, HideSmall, TYPE } from '../../theme'
+import { ExternalLink, HideSmall, Type } from '../../theme'
 import { Helmet } from 'react-helmet'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
@@ -94,16 +94,16 @@ export default function Pool() {
                     <CardSection>
                         <AutoColumn gap="md">
                             <RowBetween>
-                                <TYPE.white fontWeight={600} color={theme.text1}>
+                                <Type.White fontWeight={600} color={theme.text1}>
                                     {i18n._(t`Helpful Sushi Tools`)}
-                                </TYPE.white>
+                                </Type.White>
                             </RowBetween>
                             <RowBetween>
-                                <TYPE.white fontSize={14} color={theme.text2}>
+                                <Type.White fontSize={14} color={theme.text2}>
                                     {i18n._(
                                         t`Use any tool below to optimize your workflow. Please note, some tools are experimental so use with discretion. If theres a smart contract involved for the tool, read the code and confirm the keys have been burned.`
                                     )}
-                                </TYPE.white>
+                                </Type.White>
                             </RowBetween>
                         </AutoColumn>
                     </CardSection>
@@ -113,11 +113,11 @@ export default function Pool() {
                     <AutoColumn gap="md" style={{ width: '100%' }}>
                         <TitleRow style={{ marginTop: '1rem', marginBottom: '1rem' }} padding={'0'}>
                             <HideSmall>
-                                <TYPE.mediumHeader
+                                <Type.MediumHeader
                                     style={{ marginTop: '0.5rem', justifySelf: 'flex-start', paddingLeft: '0.75rem' }}
                                 >
                                     {i18n._(t`Tools`)}
-                                </TYPE.mediumHeader>
+                                </Type.MediumHeader>
                             </HideSmall>
                             <ButtonRow>
                                 <ResponsiveExternalLink href={''}>

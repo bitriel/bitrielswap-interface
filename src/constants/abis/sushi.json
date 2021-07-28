@@ -50,14 +50,14 @@
   },
   {
     "inputs": [],
-    "name": "DELEGATION_TYPEHASH",
+    "name": "DELEGATION_TypeHASH",
     "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "DOMAIN_TYPEHASH",
+    "name": "DOMAIN_TypeHASH",
     "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
     "stateMutability": "view",
     "type": "function"

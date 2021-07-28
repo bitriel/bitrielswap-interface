@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Pair } from '@sushiswap/sdk'
+import { ChainId, JSBI, Pair } from '@bitrielswap/sdk'
 import { transparentize } from 'polished'
 import React, { useContext, useMemo } from 'react'
 import { Link, useHistory } from 'react-router-dom'
@@ -17,7 +17,7 @@ import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useStakingInfo } from '../../state/stake/hooks'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
-import { StyledInternalLink, TYPE } from '../../theme'
+import { StyledInternalLink, Type } from '../../theme'
 import Alert from '../../components/Alert'
 import { Helmet } from 'react-helmet'
 import ExchangeHeader from '../../components/ExchangeHeader'
@@ -184,15 +184,15 @@ export default function Pool() {
                     <div className="grid grid-flow-row gap-3">
                         {!account ? (
                             <Card padding="40px">
-                                <TYPE.body color={theme.text3} textAlign="center">
+                                <Type.Body color={theme.text3} textAlign="center">
                                     {i18n._(t`Connect to a wallet to view your liquidity`)}
-                                </TYPE.body>
+                                </Type.Body>
                             </Card>
                         ) : v2IsLoading ? (
                             <EmptyProposals>
-                                <TYPE.body color={theme.text3} textAlign="center">
+                                <Type.Body color={theme.text3} textAlign="center">
                                     <Dots>{i18n._(t`Loading`)}</Dots>
-                                </TYPE.body>
+                                </Type.Body>
                             </EmptyProposals>
                         ) : allV2PairsWithLiquidity?.length > 0 || stakingPairs?.length > 0 ? (
                             <>
@@ -220,9 +220,9 @@ export default function Pool() {
                             </>
                         ) : (
                             <EmptyProposals>
-                                <TYPE.body color={theme.text3} textAlign="center">
+                                <Type.Body color={theme.text3} textAlign="center">
                                     {i18n._(t`No liquidity found`)}
-                                </TYPE.body>
+                                </Type.Body>
                             </EmptyProposals>
                         )}
 

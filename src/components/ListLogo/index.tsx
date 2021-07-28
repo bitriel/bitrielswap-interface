@@ -18,7 +18,7 @@ export default function ListLogo({
     size?: string
     style?: React.CSSProperties
     alt?: string
-}) {
+}): JSX.Element {
     const srcs: string[] = useHttpLocations(logoURI)
 
     return <StyledListLogo alt={alt} size={size} srcs={srcs} style={style} />

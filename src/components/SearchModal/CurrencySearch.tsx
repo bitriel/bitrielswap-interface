@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@sushiswap/sdk'
+import { Currency, ETHER, Token } from '@bitrielswap/sdk'
 import useDebounce from 'hooks/useDebounce'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import useTheme from 'hooks/useTheme'
@@ -12,7 +12,7 @@ import { FixedSizeList } from 'react-window'
 import styled from 'styled-components'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useAllTokens, useFoundOnInactiveList, useIsUserAddedToken, useToken } from '../../hooks/Tokens'
-import { ButtonText, IconWrapper, TYPE } from '../../theme'
+import { ButtonText, IconWrapper, Type } from '../../theme'
 import { isAddress } from '../../utils'
 import Column from '../Column'
 import Row, { RowFixed } from '../Row'
@@ -53,7 +53,7 @@ export function CurrencySearch({
     showManageView,
     showImportView,
     setImportToken
-}: CurrencySearchProps) {
+}: CurrencySearchProps): JSX.Element {
     const { i18n } = useLingui()
 
     const { chainId } = useActiveWeb3React()
@@ -207,9 +207,9 @@ export function CurrencySearch({
                 </div>
             ) : (
                 <Column style={{ padding: '20px', height: '100%' }}>
-                    <TYPE.main color={theme.text3} textAlign="center" mb="20px">
+                    <Type.Main color={theme.text3} textAlign="center" mb="20px">
                         {i18n._(t`No results found`)}
-                    </TYPE.main>
+                    </Type.Main>
                 </Column>
             )}
             <div className="mt-3">
@@ -219,7 +219,7 @@ export function CurrencySearch({
                             <IconWrapper size="16px" marginRight="6px">
                                 <Edit />
                             </IconWrapper>
-                            <TYPE.main color={theme.blue1}>{i18n._(t`Manage`)}</TYPE.main>
+                            <Type.Main color={theme.blue1}>{i18n._(t`Manage`)}</Type.Main>
                         </RowFixed>
                     </ButtonText>
                 </Row>

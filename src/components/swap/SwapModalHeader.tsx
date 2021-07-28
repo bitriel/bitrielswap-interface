@@ -1,11 +1,11 @@
-import { Trade, TradeType } from '@sushiswap/sdk'
+import { Trade, TradeType } from '@bitrielswap/sdk'
 import React, { useContext, useMemo } from 'react'
 import { AlertTriangle, ArrowDown } from 'react-feather'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { Field } from '../../state/swap/actions'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import { isAddress, shortenAddress } from '../../utils'
 import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
 import { ButtonPrimary } from '../ButtonLegacy'
@@ -94,7 +94,7 @@ export default function SwapModalHeader({
                     <RowBetween>
                         <RowFixed>
                             <AlertTriangle size={20} style={{ marginRight: '8px', minWidth: 24 }} />
-                            <TYPE.main color={theme.primary1}> {i18n._(t`Price Updated`)}</TYPE.main>
+                            <Type.Main color={theme.primary1}> {i18n._(t`Price Updated`)}</Type.Main>
                         </RowFixed>
                         <ButtonPrimary
                             style={{
@@ -112,7 +112,7 @@ export default function SwapModalHeader({
             ) : null}
             <AutoColumn justify="flex-start" gap="sm" style={{ padding: '12px 0 0 0px' }}>
                 {trade.tradeType === TradeType.EXACT_INPUT ? (
-                    <TYPE.italic textAlign="left" style={{ width: '100%' }}>
+                    <Type.Italic textAlign="left" style={{ width: '100%' }}>
                         <Trans>
                             Output is estimated. You will receive at least{' '}
                             <b>
@@ -121,9 +121,9 @@ export default function SwapModalHeader({
                             </b>{' '}
                             or the transaction will revert.
                         </Trans>
-                    </TYPE.italic>
+                    </Type.Italic>
                 ) : (
-                    <TYPE.italic textAlign="left" style={{ width: '100%' }}>
+                    <Type.Italic textAlign="left" style={{ width: '100%' }}>
                         <Trans>
                             Input is estimated. You will sell at most{' '}
                             <b>
@@ -132,17 +132,17 @@ export default function SwapModalHeader({
                             </b>{' '}
                             or the transaction will revert.
                         </Trans>
-                    </TYPE.italic>
+                    </Type.Italic>
                 )}
             </AutoColumn>
             {recipient !== null ? (
                 <AutoColumn justify="flex-start" gap="sm" style={{ padding: '12px 0 0 0px' }}>
-                    <TYPE.main>
+                    <Type.Main>
                         <Trans>
                             Output will be sent to{' '}
                             <b title={recipient}>{isAddress(recipient) ? shortenAddress(recipient) : recipient}</b>
                         </Trans>
-                    </TYPE.main>
+                    </Type.Main>
                 </AutoColumn>
             ) : null}
         </AutoColumn>

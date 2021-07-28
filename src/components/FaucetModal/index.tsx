@@ -4,7 +4,7 @@ import { ReactComponent as Close } from '../../assets/images/x.svg'
 import { useFaucetContract } from '../../hooks/useContract'
 import { ApplicationModal } from '../../state/application/actions'
 import { useModalOpen, useFaucetModalToggle } from '../../state/application/hooks'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import Modal from '../Modal'
 import TransactionConfirmationModal, { TransactionErrorContent } from '../TransactionConfirmationModal'
 
@@ -75,7 +75,7 @@ const LowerSection = styled.div`
     }
 `
 
-export default function FaucetModal() {
+export default function FaucetModal(): JSX.Element {
     const theme = useContext(ThemeContext)
 
     const faucetModalOpen = useModalOpen(ApplicationModal.FAUCET)
@@ -92,24 +92,25 @@ export default function FaucetModal() {
         setWaiting(true)
         setError('')
         setTxHash('')
-        faucetContract?.drip()
-        .then((tx: any) => {
-            setWaiting(false)
-            setTxHash(tx.hash)
-        })
-        .catch((err: any) => {
-            if (err.code === 4001) {
-                setError('Transaction rejected.')
-            } else {
-                console.error(`Claim failed`, err, 'drip')
-                setError(`Claim failed: ${err.message}`)
-            }
-            setWaiting(false)
-        })
+        faucetContract
+            ?.drip()
+            .then((tx: any) => {
+                setWaiting(false)
+                setTxHash(tx.hash)
+            })
+            .catch((err: any) => {
+                if (err.code === 4001) {
+                    setError('Transaction rejected.')
+                } else {
+                    console.error(`Claim failed`, err, 'drip')
+                    setError(`Claim failed: ${err.message}`)
+                }
+                setWaiting(false)
+            })
     }, [faucetContract])
 
     useEffect(() => {
-        if(faucetModalOpen) {
+        if (faucetModalOpen) {
             setRunning(false)
         }
     }, [faucetModalOpen])
@@ -122,7 +123,7 @@ export default function FaucetModal() {
                 </CloseIcon>
                 <HeaderRow>Faucet</HeaderRow>
                 <LowerSection>
-                    <TYPE.body color={theme.text1}>Claim your test tokens here...</TYPE.body>
+                    <Type.Body color={theme.text1}>Claim your test tokens here...</Type.Body>
                     <button
                         onClick={claimFaucet}
                         className="flex items-center bg-dark-800 hover:bg-dark-700 w-full rounded p-3 cursor-pointer mt-5"
@@ -139,19 +140,18 @@ export default function FaucetModal() {
         [toggleFaucetModal, faucetErrorMessage]
     )
 
-    return (
-        !isRunning ?
-            <Modal isOpen={faucetModalOpen} onDismiss={toggleFaucetModal} minHeight={false} maxHeight={90}>
-                <Wrapper>{getModalContent()}</Wrapper>
-            </Modal>
-        :
-            <TransactionConfirmationModal
-                isOpen={faucetModalOpen}
-                onDismiss={toggleFaucetModal}
-                attemptingTxn={isWaiting}
-                hash={txHash}
-                content={confirmationContent}
-                pendingText={'Claiming test tokens'}
-            />
+    return !isRunning ? (
+        <Modal isOpen={faucetModalOpen} onDismiss={toggleFaucetModal} minHeight={false} maxHeight={90}>
+            <Wrapper>{getModalContent()}</Wrapper>
+        </Modal>
+    ) : (
+        <TransactionConfirmationModal
+            isOpen={faucetModalOpen}
+            onDismiss={toggleFaucetModal}
+            attemptingTxn={isWaiting}
+            hash={txHash}
+            content={confirmationContent}
+            pendingText={'Claiming test tokens'}
+        />
     )
 }

@@ -1,4 +1,4 @@
-import { Token } from '@sushiswap/sdk'
+import { Token } from '@bitrielswap/sdk'
 import { TokenList } from '@uniswap/token-lists'
 import { RowBetween } from 'components/Row'
 import React, { useState } from 'react'
@@ -55,7 +55,7 @@ function Manage({
     setImportToken: (token: Token) => void
     setImportList: (list: TokenList) => void
     setListUrl: (url: string) => void
-}) {
+}): JSX.Element {
     const { i18n } = useLingui()
 
     // toggle between tokens and lists

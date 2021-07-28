@@ -3,7 +3,7 @@ import { ArrowUpCircle } from 'react-feather'
 import styled, { ThemeContext } from 'styled-components'
 import Circle from '../../assets/images/blue-loader.svg'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
-import { CloseIcon, CustomLightSpinner, TYPE } from '../../theme'
+import { CloseIcon, CustomLightSpinner, Type } from '../../theme'
 import { ExternalLink } from '../../theme/components'
 import { getExplorerLink } from '../../utils'
 import { AutoColumn, ColumnCenter } from '../Column'
@@ -30,7 +30,7 @@ export function LoadingView({ children, onDismiss }: { children: any; onDismiss:
             </ConfirmedIcon>
             <AutoColumn gap="100px" justify={'center'}>
                 {children}
-                <TYPE.subHeader>Confirm this transaction in your wallet</TYPE.subHeader>
+                <Type.SubHeader>Confirm this transaction in your wallet</Type.SubHeader>
             </AutoColumn>
         </ConfirmOrLoadingWrapper>
     )
@@ -61,7 +61,7 @@ export function SubmittedView({
                 {children}
                 {chainId && hash && (
                     <ExternalLink href={getExplorerLink(chainId, hash, 'transaction')} style={{ marginLeft: '4px' }}>
-                        <TYPE.subHeader>View transaction on explorer</TYPE.subHeader>
+                        <Type.SubHeader>View transaction on explorer</Type.SubHeader>
                     </ExternalLink>
                 )}
             </AutoColumn>

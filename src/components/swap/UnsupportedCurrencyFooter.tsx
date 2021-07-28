@@ -1,4 +1,4 @@
-import { Currency, Token } from '@sushiswap/sdk'
+import { Currency, Token } from '@bitrielswap/sdk'
 import { ButtonEmpty } from 'components/ButtonLegacy'
 import Card, { OutlineCard } from 'components/CardLegacy'
 import { AutoColumn } from 'components/Column'
@@ -8,7 +8,7 @@ import { AutoRow, RowBetween } from 'components/Row'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { CloseIcon, ExternalLink, TYPE } from 'theme'
+import { CloseIcon, ExternalLink, Type } from 'theme'
 import { getExplorerLink } from 'utils'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
 import { useUnsupportedTokens } from '../../hooks/Tokens'
@@ -30,7 +30,7 @@ const DetailsFooter = styled.div<{ show: boolean }>`
     text-align: center;
 `
 
-const AddressText = styled(TYPE.blue)`
+const AddressText = styled(Type.Blue)`
     font-size: 12px;
 
     ${({ theme }) => theme.mediaWidth.upToSmall`
@@ -63,7 +63,7 @@ export default function UnsupportedCurrencyFooter({
                 <Card padding="2rem">
                     <AutoColumn gap="lg">
                         <RowBetween>
-                            <TYPE.mediumHeader>Unsupported Assets</TYPE.mediumHeader>
+                            <Type.MediumHeader>Unsupported Assets</Type.MediumHeader>
 
                             <CloseIcon onClick={() => setShowDetails(false)} />
                         </RowBetween>
@@ -76,7 +76,7 @@ export default function UnsupportedCurrencyFooter({
                                         <AutoColumn gap="10px">
                                             <AutoRow gap="5px" align="center">
                                                 <CurrencyLogo currency={token} size={'24px'} />
-                                                <TYPE.body fontWeight={500}>{token.symbol}</TYPE.body>
+                                                <Type.Body fontWeight={500}>{token.symbol}</Type.Body>
                                             </AutoRow>
                                             {chainId && (
                                                 <ExternalLink href={getExplorerLink(chainId, token.address, 'address')}>
@@ -89,16 +89,16 @@ export default function UnsupportedCurrencyFooter({
                             )
                         })}
                         <AutoColumn gap="lg">
-                            <TYPE.body fontWeight={500}>
+                            <Type.Body fontWeight={500}>
                                 Some assets are not available through this interface because they may not work well with
                                 our smart contract or we are unable to allow trading for legal reasons.
-                            </TYPE.body>
+                            </Type.Body>
                         </AutoColumn>
                     </AutoColumn>
                 </Card>
             </Modal>
             <ButtonEmpty padding={'0'} onClick={() => setShowDetails(true)}>
-                <TYPE.blue>Read more about unsupported assets</TYPE.blue>
+                <Type.Blue>Read more about unsupported assets</Type.Blue>
             </ButtonEmpty>
         </DetailsFooter>
     )

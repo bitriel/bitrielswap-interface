@@ -13,11 +13,11 @@ interface TooltipProps extends Omit<PopoverProps, 'content'> {
     text: string
 }
 
-export default function Tooltip({ text, ...rest }: TooltipProps) {
+export default function Tooltip({ text, ...rest }: TooltipProps): JSX.Element {
     return <Popover content={<TooltipContainer>{text}</TooltipContainer>} {...rest} />
 }
 
-export function MouseoverTooltip({ children, ...rest }: Omit<TooltipProps, 'show'>) {
+export function MouseoverTooltip({ children, ...rest }: Omit<TooltipProps, 'show'>): JSX.Element {
     const [show, setShow] = useState(false)
     const open = useCallback(() => setShow(true), [setShow])
     const close = useCallback(() => setShow(false), [setShow])

@@ -13,7 +13,7 @@ import { SUPPORTED_WALLETS } from '../../constants'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { AppDispatch } from '../../state'
 import { clearAllTransactions } from '../../state/transactions/actions'
-import { ExternalLink, LinkStyledButton, TYPE } from '../../theme'
+import { ExternalLink, LinkStyledButton, Type } from '../../theme'
 import { getExplorerLink, shortenAddress } from '../../utils'
 import { ButtonSecondary } from '../ButtonLegacy'
 import Identicon from '../Identicon'
@@ -401,7 +401,7 @@ export default function AccountDetails({
             {!!pendingTransactions.length || !!confirmedTransactions.length ? (
                 <LowerSection>
                     <AutoRow mb={'1rem'} style={{ justifyContent: 'space-between' }}>
-                        <TYPE.body>Recent Transactions</TYPE.body>
+                        <Type.Body>Recent Transactions</Type.Body>
                         <LinkStyledButton onClick={clearAllTransactionsCallback}>(clear all)</LinkStyledButton>
                     </AutoRow>
                     {renderTransactions(pendingTransactions)}
@@ -409,7 +409,7 @@ export default function AccountDetails({
                 </LowerSection>
             ) : (
                 <LowerSection>
-                    <TYPE.body color={theme.text1}>Your transactions will appear here...</TYPE.body>
+                    <Type.Body color={theme.text1}>Your transactions will appear here...</Type.Body>
                 </LowerSection>
             )}
         </>

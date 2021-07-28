@@ -56,7 +56,7 @@ const StyledArrowLeft = styled(ArrowLeft)`
 `
 
 // This seems to be legacy code, should we remove this? Notice the display: 'none'
-export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
+export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }): JSX.Element {
     const { i18n } = useLingui()
 
     return (
@@ -71,7 +71,7 @@ export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
     )
 }
 
-export function FindPoolTabs() {
+export function FindPoolTabs(): JSX.Element {
     const { i18n } = useLingui()
 
     return (
@@ -87,7 +87,7 @@ export function FindPoolTabs() {
     )
 }
 
-export function AddRemoveTabs({ adding, creating }: { adding: boolean; creating: boolean }) {
+export function AddRemoveTabs({ adding, creating }: { adding: boolean; creating: boolean }): JSX.Element {
     const { i18n } = useLingui()
 
     // reset states on back

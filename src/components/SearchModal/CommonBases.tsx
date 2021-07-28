@@ -1,4 +1,4 @@
-import { ChainId, Currency, currencyEquals, ETHER, Token } from '@sushiswap/sdk'
+import { ChainId, Currency, currencyEquals, ETHER, Token } from '@bitrielswap/sdk'
 import React from 'react'
 import { Text } from 'rebass'
 import styled from 'styled-components'
@@ -32,7 +32,7 @@ export default function CommonBases({
     chainId?: ChainId
     selectedCurrency?: Currency | null
     onSelect: (currency: Currency) => void
-}) {
+}): JSX.Element {
     return (
         <AutoColumn gap="md">
             <AutoRow>

@@ -60,7 +60,7 @@ interface ProgressCirclesProps {
  *
  * @param steps  array of booleans where true means step is complete
  */
-export default function ProgressCircles({ steps, disabled = false, ...rest }: ProgressCirclesProps) {
+export default function ProgressCircles({ steps, disabled = false, ...rest }: ProgressCirclesProps): JSX.Element {
     return (
         <Wrapper justify={'center'} {...rest}>
             <Grouping>

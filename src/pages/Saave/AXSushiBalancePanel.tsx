@@ -1,4 +1,4 @@
-import { Pair } from '@sushiswap/sdk'
+import { Pair } from '@bitrielswap/sdk'
 import { darken } from 'polished'
 import React from 'react'
 import styled from 'styled-components'
@@ -7,7 +7,7 @@ import { Input as NumericalInput } from '../../components/NumericalInput'
 import { RowBetween } from '../../components/Row'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import useTheme from '../../hooks/useTheme'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import { formatFromBalance } from '../../utils'
 
 const InputRow = styled.div<{ selected: boolean }>`
@@ -118,9 +118,9 @@ export default function CurrencyInputPanel({
                     {!hideInput && (
                         <LabelRow>
                             <RowBetween>
-                                <TYPE.body color={theme.text2} fontWeight={500} fontSize={14}>
+                                <Type.Body color={theme.text2} fontWeight={500} fontSize={14}>
                                     {label}
-                                </TYPE.body>
+                                </Type.Body>
                             </RowBetween>
                         </LabelRow>
                     )}

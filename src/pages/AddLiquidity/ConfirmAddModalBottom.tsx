@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@sushiswap/sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from '@bitrielswap/sdk'
 import React from 'react'
 import { Text } from 'rebass'
 import { ButtonPrimary } from '../../components/ButtonLegacy'
@@ -6,7 +6,7 @@ import CurrencyLogo from '../../components/CurrencyLogo'
 import { RowBetween, RowFixed } from '../../components/Row'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { Field } from '../../state/mint/actions'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 
@@ -30,37 +30,37 @@ export function ConfirmAddModalBottom({
     return (
         <>
             <RowBetween>
-                <TYPE.body>{i18n._(t`${currencies[Field.CURRENCY_A]?.getSymbol(chainId)} Deposited`)}</TYPE.body>
+                <Type.Body>{i18n._(t`${currencies[Field.CURRENCY_A]?.getSymbol(chainId)} Deposited`)}</Type.Body>
                 <RowFixed>
                     <CurrencyLogo currency={currencies[Field.CURRENCY_A]} style={{ marginRight: '8px' }} />
-                    <TYPE.body>{parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)}</TYPE.body>
+                    <Type.Body>{parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)}</Type.Body>
                 </RowFixed>
             </RowBetween>
             <RowBetween>
-                <TYPE.body>{i18n._(t`${currencies[Field.CURRENCY_B]?.getSymbol(chainId)} Deposited`)}</TYPE.body>
+                <Type.Body>{i18n._(t`${currencies[Field.CURRENCY_B]?.getSymbol(chainId)} Deposited`)}</Type.Body>
                 <RowFixed>
                     <CurrencyLogo currency={currencies[Field.CURRENCY_B]} style={{ marginRight: '8px' }} />
-                    <TYPE.body>{parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)}</TYPE.body>
+                    <Type.Body>{parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)}</Type.Body>
                 </RowFixed>
             </RowBetween>
             <RowBetween>
-                <TYPE.body>{i18n._(t`Rates`)}</TYPE.body>
-                <TYPE.body>
+                <Type.Body>{i18n._(t`Rates`)}</Type.Body>
+                <Type.Body>
                     {`1 ${currencies[Field.CURRENCY_A]?.getSymbol(chainId)} = ${price?.toSignificant(4)} ${currencies[
                         Field.CURRENCY_B
                     ]?.getSymbol(chainId)}`}
-                </TYPE.body>
+                </Type.Body>
             </RowBetween>
             <RowBetween style={{ justifyContent: 'flex-end' }}>
-                <TYPE.body>
+                <Type.Body>
                     {`1 ${currencies[Field.CURRENCY_B]?.getSymbol(chainId)} = ${price
                         ?.invert()
                         .toSignificant(4)} ${currencies[Field.CURRENCY_A]?.getSymbol(chainId)}`}
-                </TYPE.body>
+                </Type.Body>
             </RowBetween>
             <RowBetween>
-                <TYPE.body>{i18n._(t`Share of Pool:`)}</TYPE.body>
-                <TYPE.body>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</TYPE.body>
+                <Type.Body>{i18n._(t`Share of Pool:`)}</Type.Body>
+                <Type.Body>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</Type.Body>
             </RowBetween>
             <ButtonPrimary style={{ margin: '20px 0 0 0' }} onClick={onAdd}>
                 <Text fontWeight={500} fontSize={20}>

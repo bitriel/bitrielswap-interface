@@ -1,4 +1,4 @@
-import { Currency, Token } from '@sushiswap/sdk'
+import { Currency, Token } from '@bitrielswap/sdk'
 import { TokenList } from '@uniswap/token-lists'
 import usePrevious from 'hooks/usePrevious'
 import React, { useCallback, useEffect, useState } from 'react'
@@ -26,7 +26,7 @@ function CurrencySearchModal({
     selectedCurrency,
     otherSelectedCurrency,
     showCommonBases = false
-}: CurrencySearchModalProps) {
+}: CurrencySearchModalProps): JSX.Element {
     const [modalView, setModalView] = useState<CurrencyModalView>(CurrencyModalView.manage)
     const lastOpen = useLast(isOpen)
 

@@ -12,7 +12,7 @@ import {
     useUserSlippageTolerance,
     useUserTransactionTTL
 } from '../../state/user/hooks'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import { ButtonError } from '../ButtonLegacy'
 import { AutoColumn } from '../Column'
 import Modal from '../Modal'
@@ -80,7 +80,7 @@ const ExtendedMenuFlyout = styled(MenuFlyout)`
   `};
 `
 
-export default function SettingsTab() {
+export default function SettingsTab(): JSX.Element {
     const { i18n } = useLingui()
 
     const node = useRef<HTMLDivElement>(null)
@@ -171,9 +171,9 @@ export default function SettingsTab() {
                         </div>
                         <RowBetween>
                             <RowFixed>
-                                <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
+                                <Type.Black fontWeight={400} fontSize={14} color={theme.text2}>
                                     {i18n._(t`Toggle Expert Mode`)}
-                                </TYPE.black>
+                                </Type.Black>
                                 <QuestionHelper
                                     text={i18n._(
                                         t`Bypasses confirmation modals and allows high slippage trades. Use at your own risk.`
@@ -198,9 +198,9 @@ export default function SettingsTab() {
                         </RowBetween>
                         <RowBetween>
                             <RowFixed>
-                                <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
+                                <Type.Black fontWeight={400} fontSize={14} color={theme.text2}>
                                     {i18n._(t`Disable Multihops`)}
-                                </TYPE.black>
+                                </Type.Black>
                                 <QuestionHelper text={i18n._(t`Restricts swaps to direct pairs only.`)} />
                             </RowFixed>
                             <Toggle

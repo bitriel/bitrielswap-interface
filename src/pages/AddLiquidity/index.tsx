@@ -1,6 +1,6 @@
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
 import { ButtonError, ButtonLight, ButtonPrimary } from '../../components/ButtonLegacy'
-import { Currency, ETHER, TokenAmount, WETH, currencyEquals } from '@sushiswap/sdk'
+import { Currency, ETHER, TokenAmount, WETH, currencyEquals } from '@bitrielswap/sdk'
 import { Dots, Wrapper } from '../Pool/styleds'
 import React, { useCallback, useContext, useState } from 'react'
 import Row, { AutoRow, RowBetween, RowFlat } from '../../components/Row'
@@ -31,7 +31,7 @@ import { Plus } from 'react-feather'
 import { PoolPriceBar } from './PoolPriceBar'
 import ReactGA from 'react-ga'
 import { RouteComponentProps } from 'react-router-dom'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components'
 import { TransactionResponse } from '@ethersproject/providers'
@@ -258,10 +258,10 @@ export default function AddLiquidity({
                         <Trans>Pool Tokens</Trans>
                     </Text>
                 </Row>
-                <TYPE.italic fontSize={14} className="text-gray-500" textAlign="left" padding={'20px 0 20px 0'}>
+                <Type.Italic fontSize={14} className="text-gray-500" textAlign="left" padding={'20px 0 20px 0'}>
                     {t`Output is estimated. If the price changes by more than ${allowedSlippage /
                         100}% your transaction will revert.`}
-                </TYPE.italic>
+                </Type.Italic>
             </AutoColumn>
         )
     }
@@ -456,7 +456,7 @@ export default function AddLiquidity({
 
                         {addIsUnsupported ? (
                             <ButtonPrimary disabled={true}>
-                                <TYPE.main mb="4px">{i18n._(t`Unsupported Asset`)}</TYPE.main>
+                                <Type.Main mb="4px">{i18n._(t`Unsupported Asset`)}</Type.Main>
                             </ButtonPrimary>
                         ) : !account ? (
                             <ButtonLight onClick={toggleWalletModal}>{i18n._(t`Connect Wallet`)}</ButtonLight>

@@ -1,4 +1,4 @@
-import { Pair } from '@sushiswap/sdk'
+import { Pair } from '@bitrielswap/sdk'
 import { darken } from 'polished'
 import React, { useCallback, useState } from 'react'
 import { t } from '@lingui/macro'
@@ -9,7 +9,7 @@ import { RowBetween } from '../../components/Row'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import useTheme from '../../hooks/useTheme'
 import useSaave from '../../hooks/useSaave'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import { formatFromBalance, formatToBalance } from '../../utils'
 import { useLingui } from '@lingui/react'
 
@@ -197,11 +197,11 @@ export default function CurrencyInputPanel({
                     {!hideInput && (
                         <LabelRow>
                             <RowBetween>
-                                <TYPE.body color={theme.text2} fontWeight={500} fontSize={14}>
+                                <Type.Body color={theme.text2} fontWeight={500} fontSize={14}>
                                     {label}
-                                </TYPE.body>
+                                </Type.Body>
                                 {account && (
-                                    <TYPE.body
+                                    <Type.Body
                                         onClick={handleMaxDeposit}
                                         color={theme.text2}
                                         fontWeight={500}
@@ -209,7 +209,7 @@ export default function CurrencyInputPanel({
                                         style={{ display: 'inline', cursor: 'pointer' }}
                                     >
                                         {i18n._(t`SUSHI Balance: ${sushiBalance}`)}
-                                    </TYPE.body>
+                                    </Type.Body>
                                 )}
                             </RowBetween>
                         </LabelRow>

@@ -12,7 +12,7 @@ import {
     SUSHI_ADDRESS,
     TIMELOCK_ADDRESS,
     WETH
-} from '@sushiswap/sdk'
+} from '@bitrielswap/sdk'
 import {
     BENTOBOX_ADDRESS,
     BORING_HELPER_ADDRESS,

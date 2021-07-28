@@ -452,7 +452,7 @@ export const SHARE_VALUE = (pairAddress: string, blocks: { number: string; times
     return gql(queryString)
 }
 
-export const ETH_PRICE = (block: string) => {
+export const ETH_PRICE = (block: string): DocumentNode => {
     const queryString = block
         ? `
     query bundles {

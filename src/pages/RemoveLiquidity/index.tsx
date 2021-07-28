@@ -1,7 +1,7 @@
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
 import { ArrowDown, Plus } from 'react-feather'
 import { ButtonConfirmed, ButtonError, ButtonLight, ButtonPrimary } from '../../components/ButtonLegacy'
-import { ChainId, Currency, ETHER, Percent, WETH, currencyEquals } from '@sushiswap/sdk'
+import { ChainId, Currency, ETHER, Percent, WETH, currencyEquals } from '@bitrielswap/sdk'
 import React, { useCallback, useContext, useMemo, useState } from 'react'
 import Row, { AutoRow, RowBetween, RowFixed } from '../../components/Row'
 import { Trans, t } from '@lingui/macro'
@@ -29,7 +29,7 @@ import PercentInputPanel from '../../components/PercentInputPanel'
 import ReactGA from 'react-ga'
 import RemoveLiquidityReceiveDetails from '../../components/Liquidity/RemoveLiquidityReceiveDetails'
 import { RouteComponentProps } from 'react-router'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components'
 import { TransactionResponse } from '@ethersproject/providers'
@@ -393,10 +393,10 @@ export default function RemoveLiquidity({
                     </RowFixed>
                 </RowBetween>
 
-                <TYPE.italic fontSize={14} className="text-gray-500" textAlign="left" padding={'20px 0 20px 0'}>
+                <Type.Italic fontSize={14} className="text-gray-500" textAlign="left" padding={'20px 0 20px 0'}>
                     {t`Output is estimated. If the price changes by more than ${allowedSlippage /
                         100}% your transaction will revert.`}
-                </TYPE.italic>
+                </Type.Italic>
             </AutoColumn>
         )
     }

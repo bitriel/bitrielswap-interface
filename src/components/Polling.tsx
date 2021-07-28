@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
 import { useBlockNumber } from '../state/application/hooks'
-import { ExternalLink, TYPE } from '../theme'
+import { ExternalLink, Type } from '../theme'
 import { getExplorerLink } from '../utils'
 
 const StyledPolling = styled.div`
@@ -61,7 +61,7 @@ const Spinner = styled.div`
     top: -3px;
 `
 
-export default function Polling() {
+export default function Polling(): JSX.Element {
     const { chainId } = useActiveWeb3React()
 
     const blockNumber = useBlockNumber()
@@ -85,7 +85,7 @@ export default function Polling() {
     return (
         <ExternalLink href={chainId && blockNumber ? getExplorerLink(chainId, blockNumber.toString(), 'block') : ''}>
             <StyledPolling>
-                <TYPE.small style={{ opacity: isMounted ? '0.2' : '0.6' }}>{blockNumber}</TYPE.small>
+                <Type.Small style={{ opacity: isMounted ? '0.2' : '0.6' }}>{blockNumber}</Type.Small>
                 <StyledPollingDot>{!isMounted && <Spinner />}</StyledPollingDot>
             </StyledPolling>
         </ExternalLink>

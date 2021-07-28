@@ -3,9 +3,9 @@ import { ArrowWrapper, BottomGrouping, SwapCallbackError, Wrapper } from '../../
 import { AutoRow, RowBetween } from '../../components/Row'
 import { ButtonConfirmed, ButtonError, ButtonLight, ButtonPrimary } from '../../components/ButtonLegacy'
 import Card, { DarkCard, GreyCard } from '../../components/CardLegacy'
-import { ChainId, CurrencyAmount, JSBI, Token, Trade } from '@sushiswap/sdk'
+import { ChainId, CurrencyAmount, JSBI, Token, Trade } from '@bitrielswap/sdk'
 import Column, { AutoColumn } from '../../components/Column'
-import { LinkStyledButton, TYPE } from '../../theme'
+import { LinkStyledButton, Type } from '../../theme'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
 import { useAllTokens, useCurrency } from '../../hooks/Tokens'
@@ -500,7 +500,7 @@ export default function Swap() {
                     <BottomGrouping>
                         {swapIsUnsupported ? (
                             <ButtonPrimary disabled={true}>
-                                <TYPE.main mb="4px">{i18n._(t`Unsupported Asset`)}</TYPE.main>
+                                <Type.Main mb="4px">{i18n._(t`Unsupported Asset`)}</Type.Main>
                             </ButtonPrimary>
                         ) : !account ? (
                             <ButtonLight onClick={toggleWalletModal}>{i18n._(t`Connect Wallet`)}</ButtonLight>
@@ -515,9 +515,9 @@ export default function Swap() {
                             </ButtonPrimary>
                         ) : noRoute && userHasSpecifiedInputOutput ? (
                             <GreyCard style={{ textAlign: 'center' }}>
-                                <TYPE.main mb="4px">{i18n._(t`Insufficient liquidity for this trade`)}</TYPE.main>
+                                <Type.Main mb="4px">{i18n._(t`Insufficient liquidity for this trade`)}</Type.Main>
                                 {singleHopOnly && (
-                                    <TYPE.main mb="4px">{i18n._(t`Try enabling multi-hop trades`)}</TYPE.main>
+                                    <Type.Main mb="4px">{i18n._(t`Try enabling multi-hop trades`)}</Type.Main>
                                 )}
                             </GreyCard>
                         ) : showApproveFlow ? (

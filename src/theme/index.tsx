@@ -117,7 +117,7 @@ export function theme(darkMode: boolean): DefaultTheme {
     }
 }
 
-export default function ThemeProvider({ children }: { children: React.ReactNode }) {
+export default function ThemeProvider({ children }: { children: React.ReactNode }): any {
     //const darkMode = useIsDarkMode()
     const darkMode = true
 
@@ -130,41 +130,41 @@ const TextWrapper = styled(Text)<{ color: keyof Colors }>`
     color: ${({ color, theme }) => (theme as any)[color]};
 `
 
-export const TYPE = {
-    main(props: TextProps) {
+export const Type = {
+    Main(props: TextProps): JSX.Element {
         return <TextWrapper fontWeight={500} color={'text2'} {...props} />
     },
-    link(props: TextProps) {
+    Link(props: TextProps): JSX.Element {
         return <TextWrapper fontWeight={500} color={'primary1'} {...props} />
     },
-    black(props: TextProps) {
+    Black(props: TextProps): JSX.Element {
         return <TextWrapper fontWeight={500} color={'text1'} {...props} />
     },
-    white(props: TextProps) {
+    White(props: TextProps): JSX.Element {
         return <TextWrapper fontWeight={500} color={'white'} {...props} />
     },
-    body(props: TextProps) {
+    Body(props: TextProps): JSX.Element {
         return <TextWrapper fontWeight={400} fontSize={16} color={'text1'} {...props} />
     },
-    mediumHeader(props: TextProps) {
+    MediumHeader(props: TextProps): JSX.Element {
         return <TextWrapper fontWeight={500} fontSize={20} {...props} />
     },
-    subHeader(props: TextProps) {
+    SubHeader(props: TextProps): JSX.Element {
         return <TextWrapper fontWeight={400} fontSize={14} {...props} />
     },
-    small(props: TextProps) {
+    Small(props: TextProps): JSX.Element {
         return <TextWrapper fontWeight={500} fontSize={11} {...props} />
     },
-    blue(props: TextProps) {
+    Blue(props: TextProps): JSX.Element {
         return <TextWrapper fontWeight={500} color={'blue1'} {...props} />
     },
-    darkGray(props: TextProps) {
+    DarkGray(props: TextProps): JSX.Element {
         return <TextWrapper fontWeight={500} color={'text3'} {...props} />
     },
-    italic(props: TextProps) {
+    Italic(props: TextProps): JSX.Element {
         return <TextWrapper fontWeight={500} fontSize={12} fontStyle={'italic'} color={'text2'} {...props} />
     },
-    error({ error, ...props }: { error: boolean } & TextProps) {
+    Error({ error, ...props }: { error: boolean } & TextProps) {
         return <TextWrapper fontWeight={500} color={error ? 'red1' : 'text2'} {...props} />
     }
 }

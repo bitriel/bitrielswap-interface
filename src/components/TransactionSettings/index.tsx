@@ -1,7 +1,7 @@
 import { darken } from 'polished'
 import React, { useContext, useRef, useState } from 'react'
 import styled, { ThemeContext } from 'styled-components'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import { AutoColumn } from '../Column'
 import QuestionHelper from '../QuestionHelper'
 import { RowBetween, RowFixed } from '../Row'
@@ -149,9 +149,9 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
         <AutoColumn gap="md">
             <AutoColumn gap="sm">
                 <RowFixed>
-                    <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
+                    <Type.Black fontWeight={400} fontSize={14} color={theme.text2}>
                         {i18n._(t`Slippage tolerance`)}
-                    </TYPE.black>
+                    </Type.Black>
                     <QuestionHelper
                         text={i18n._(
                             t`Your transaction will revert if the price changes unfavorably by more than this percentage.`
@@ -234,9 +234,9 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
 
             <AutoColumn gap="sm">
                 <RowFixed>
-                    <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
+                    <Type.Black fontSize={14} fontWeight={400} color={theme.text2}>
                         {i18n._(t`Transaction deadline`)}
-                    </TYPE.black>
+                    </Type.Black>
                     <QuestionHelper
                         text={i18n._(t`Your transaction will revert if it is pending for more than this long.`)}
                     />
@@ -253,9 +253,9 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
                             onChange={e => parseCustomDeadline(e.target.value)}
                         />
                     </OptionCustom>
-                    <TYPE.body style={{ paddingLeft: '8px' }} fontSize={14}>
+                    <Type.Body style={{ paddingLeft: '8px' }} fontSize={14}>
                         {i18n._(t`minutes`)}
-                    </TYPE.body>
+                    </Type.Body>
                 </RowFixed>
             </AutoColumn>
         </AutoColumn>

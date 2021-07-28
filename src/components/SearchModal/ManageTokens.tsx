@@ -1,4 +1,4 @@
-import { Token } from '@sushiswap/sdk'
+import { Token } from '@bitrielswap/sdk'
 import Card from 'components/Card'
 import Column from 'components/Column'
 import CurrencyLogo from 'components/CurrencyLogo'
@@ -8,7 +8,7 @@ import { useToken } from 'hooks/Tokens'
 import React, { RefObject, useCallback, useMemo, useRef, useState } from 'react'
 import { useRemoveUserAddedToken, useUserAddedTokens } from 'state/user/hooks'
 import styled from 'styled-components'
-import { ButtonText, ExternalLink, ExternalLinkIcon, TrashIcon, TYPE } from 'theme'
+import { ButtonText, ExternalLink, ExternalLinkIcon, TrashIcon, Type } from 'theme'
 import { getExplorerLink, isAddress } from 'utils'
 import useTheme from '../../hooks/useTheme'
 import CurrencyModalView from './CurrencyModalView'
@@ -40,7 +40,7 @@ function ManageTokens({
 }: {
     setModalView: (view: CurrencyModalView) => void
     setImportToken: (token: Token) => void
-}) {
+}): JSX.Element {
     const { chainId } = useActiveWeb3React()
 
     const [searchQuery, setSearchQuery] = useState<string>('')
@@ -78,9 +78,9 @@ function ManageTokens({
                     <RowFixed>
                         <CurrencyLogo currency={token} size={'20px'} />
                         <ExternalLink href={getExplorerLink(chainId, token.address, 'address')}>
-                            <TYPE.main ml={'10px'} fontWeight={600}>
+                            <Type.Main ml={'10px'} fontWeight={600}>
                                 {token.symbol}
-                            </TYPE.main>
+                            </Type.Main>
                         </ExternalLink>
                     </RowFixed>
                     <RowFixed>
@@ -108,7 +108,7 @@ function ManageTokens({
                         />
                     </Row>
                     {searchQuery !== '' && !isAddressSearch && (
-                        <TYPE.error error={true}>Enter valid token address</TYPE.error>
+                        <Type.Error error={true}>Enter valid token address</Type.Error>
                     )}
                     {searchToken && (
                         <Card backgroundColor={theme.bg2} padding="10px 0">
@@ -124,12 +124,12 @@ function ManageTokens({
                 <Separator />
                 <PaddedColumn gap="lg">
                     <RowBetween>
-                        <TYPE.main fontWeight={600}>
+                        <Type.Main fontWeight={600}>
                             {userAddedTokens?.length} Custom {userAddedTokens.length === 1 ? 'Token' : 'Tokens'}
-                        </TYPE.main>
+                        </Type.Main>
                         {userAddedTokens.length > 0 && (
                             <ButtonText onClick={handleRemoveAll}>
-                                <TYPE.blue>Clear all</TYPE.blue>
+                                <Type.Blue>Clear all</Type.Blue>
                             </ButtonText>
                         )}
                     </RowBetween>
@@ -137,7 +137,7 @@ function ManageTokens({
                 </PaddedColumn>
             </Column>
             <Footer>
-                <TYPE.darkGray>Tip: Custom tokens are stored locally in your browser</TYPE.darkGray>
+                <Type.DarkGray>Tip: Custom tokens are stored locally in your browser</Type.DarkGray>
             </Footer>
         </Wrapper>
     )

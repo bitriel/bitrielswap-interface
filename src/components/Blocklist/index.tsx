@@ -2,7 +2,7 @@ import React, { ReactNode, useMemo } from 'react'
 import { BLOCKED_ADDRESSES } from '../../constants'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 
-export default function Blocklist({ children }: { children: ReactNode }) {
+export default function Blocklist({ children }: { children: ReactNode }): JSX.Element {
     const { account } = useActiveWeb3React()
     const blocked: boolean = useMemo(() => Boolean(account && BLOCKED_ADDRESSES.indexOf(account) !== -1), [account])
     if (blocked) {

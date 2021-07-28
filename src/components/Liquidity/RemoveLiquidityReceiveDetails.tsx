@@ -1,10 +1,10 @@
 import React from 'react'
-import { Currency, currencyEquals, ETHER, WETH } from '@sushiswap/sdk'
+import { Currency, currencyEquals, ETHER, WETH } from '@bitrielswap/sdk'
 import { AutoColumn } from '../../components/Column'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import { AutoRow, RowBetween } from '../../components/Row'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
-import { StyledInternalLink, TYPE } from '../../theme'
+import { StyledInternalLink, Type } from '../../theme'
 import { currencyId } from '../../utils/currencyId'
 
 interface RemoveLiquidityReceiveDetailsProps {
@@ -25,7 +25,7 @@ export default function RemoveLiquidityReceiveDetails({
     hasWETH,
     hasETH,
     id
-}: RemoveLiquidityReceiveDetailsProps) {
+}: RemoveLiquidityReceiveDetailsProps): JSX.Element {
     const { chainId } = useActiveWeb3React()
     if (!chainId || !currencyA || !currencyB) throw new Error('missing dependencies')
     return (

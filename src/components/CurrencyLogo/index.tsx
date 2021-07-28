@@ -1,4 +1,4 @@
-import { ChainId, Currency, ETHER, Token } from '@sushiswap/sdk'
+import { ChainId, Currency, ETHER, Token } from '@bitrielswap/sdk'
 import React, { useMemo } from 'react'
 
 import AvalancheLogo from '../../assets/images/avalanche-logo.png'
@@ -76,7 +76,7 @@ export default function CurrencyLogo({
     currency?: Currency
     size?: string
     style?: React.CSSProperties
-}) {
+}): JSX.Element {
     const { chainId } = useActiveWeb3React()
     const uriLocations = useHttpLocations(currency instanceof WrappedTokenInfo ? currency.logoURI : undefined)
 

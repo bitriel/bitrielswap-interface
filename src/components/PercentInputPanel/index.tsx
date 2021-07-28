@@ -7,7 +7,7 @@ interface PercentInputPanelProps {
     id: string
 }
 
-export default function PercentInputPanel({ value, onUserInput, id }: PercentInputPanelProps) {
+export default function PercentInputPanel({ value, onUserInput, id }: PercentInputPanelProps): JSX.Element {
     return (
         <div id={id} className="rounded bg-dark-800 p-5">
             <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row justify-between">

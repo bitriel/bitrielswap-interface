@@ -94,7 +94,7 @@ export default function Modal({
     children,
     padding = 5,
     noPadding = false
-}: ModalProps) {
+}: ModalProps): JSX.Element {
     const fadeTransition = useTransition(isOpen, null, {
         config: { duration: 200 },
         from: { opacity: 0 },

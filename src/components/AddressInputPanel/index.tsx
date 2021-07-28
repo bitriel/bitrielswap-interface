@@ -2,7 +2,7 @@ import React, { useCallback, useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import useENS from '../../hooks/useENS'
-import { ExternalLink, TYPE } from '../../theme'
+import { ExternalLink, Type } from '../../theme'
 import { getExplorerLink } from '../../utils'
 import { AutoColumn } from '../Column'
 import { RowBetween } from '../Row'
@@ -75,7 +75,7 @@ export default function AddressInputPanel({
     value: string
     // triggers whenever the typed value changes
     onChange: (value: string) => void
-}) {
+}): JSX.Element {
     const { chainId } = useActiveWeb3React()
     const theme = useContext(ThemeContext)
 
@@ -98,9 +98,9 @@ export default function AddressInputPanel({
                 <InputContainer>
                     <AutoColumn gap="md">
                         <RowBetween>
-                            <TYPE.black color={theme.text2} fontWeight={500} fontSize={14}>
+                            <Type.Black color={theme.text2} fontWeight={500} fontSize={14}>
                                 Recipient
-                            </TYPE.black>
+                            </Type.Black>
                             {address && chainId && (
                                 <ExternalLink
                                     href={getExplorerLink(chainId, name ?? address, 'address')}

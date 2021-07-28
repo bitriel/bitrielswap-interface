@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { RowBetween } from '../../components/Row'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 
 const StyledSwapHeader = styled.div`
     padding: 12px 1rem 0px 1.5rem;
@@ -15,7 +15,7 @@ export default function SwapHeader() {
     return (
         <StyledSwapHeader>
             <RowBetween>
-                <TYPE.black fontWeight={500}>SUSHI → xSUSHI → aXSUSHI</TYPE.black>
+                <Type.Black fontWeight={500}>SUSHI → xSUSHI → aXSUSHI</Type.Black>
             </RowBetween>
         </StyledSwapHeader>
     )

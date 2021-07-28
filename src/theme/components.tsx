@@ -205,7 +205,7 @@ export function ExternalLink({
     href,
     rel = 'noopener noreferrer',
     ...rest
-}: Omit<HTMLProps<HTMLAnchorElement>, 'as' | 'ref' | 'onClick'> & { href: string }) {
+}: Omit<HTMLProps<HTMLAnchorElement>, 'as' | 'ref' | 'onClick'> & { href: string }): JSX.Element {
     const handleClick = useCallback(
         (event: React.MouseEvent<HTMLAnchorElement>) => {
             // don't prevent default, don't redirect if it's a new tab
@@ -231,7 +231,7 @@ export function ExternalLinkIcon({
     href,
     rel = 'noopener noreferrer',
     ...rest
-}: Omit<HTMLProps<HTMLAnchorElement>, 'as' | 'ref' | 'onClick'> & { href: string }) {
+}: Omit<HTMLProps<HTMLAnchorElement>, 'as' | 'ref' | 'onClick'> & { href: string }): JSX.Element {
     const handleClick = useCallback(
         (event: React.MouseEvent<HTMLAnchorElement>) => {
             // don't prevent default, don't redirect if it's a new tab

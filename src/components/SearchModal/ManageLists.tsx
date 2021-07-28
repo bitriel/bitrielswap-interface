@@ -15,7 +15,7 @@ import useToggle from '../../hooks/useToggle'
 import { AppDispatch, AppState } from '../../state'
 import { acceptListUpdate, disableList, enableList, removeList } from '../../state/lists/actions'
 import { useActiveListUrls, useAllLists, useIsListActive } from '../../state/lists/hooks'
-import { ExternalLink, IconWrapper, LinkStyledButton, TYPE } from '../../theme'
+import { ExternalLink, IconWrapper, LinkStyledButton, Type } from '../../theme'
 import listVersionLabel from '../../utils/listVersionLabel'
 import { parseENSAddress } from '../../utils/parseENSAddress'
 import uriToHttp from '../../utils/uriToHttp'
@@ -73,7 +73,7 @@ const StyledTitleText = styled.div<{ active: boolean }>`
     color: ${({ theme, active }) => (active ? theme.white : theme.text2)};
 `
 
-const StyledListUrlText = styled(TYPE.main)<{ active: boolean }>`
+const StyledListUrlText = styled(Type.Main)<{ active: boolean }>`
     font-size: 12px;
     color: ${({ theme, active }) => (active ? theme.white : theme.text2)};
 `
@@ -236,7 +236,7 @@ function ManageLists({
     setModalView: (view: CurrencyModalView) => void
     setImportList: (list: TokenList) => void
     setListUrl: (url: string) => void
-}) {
+}): JSX.Element {
     const theme = useTheme()
 
     const [listUrlInput, setListUrlInput] = useState<string>('')
@@ -342,9 +342,9 @@ function ManageLists({
                     />
                 </Row>
                 {addError ? (
-                    <TYPE.error title={addError} style={{ textOverflow: 'ellipsis', overflow: 'hidden' }} error>
+                    <Type.Error title={addError} style={{ textOverflow: 'ellipsis', overflow: 'hidden' }} error>
                         {addError}
-                    </TYPE.error>
+                    </Type.Error>
                 ) : null}
             </PaddedColumn>
             {tempList && (
@@ -354,8 +354,8 @@ function ManageLists({
                             <RowFixed>
                                 {tempList.logoURI && <ListLogo logoURI={tempList.logoURI} size="40px" />}
                                 <AutoColumn gap="4px" style={{ marginLeft: '20px' }}>
-                                    <TYPE.body fontWeight={600}>{tempList.name}</TYPE.body>
-                                    <TYPE.main fontSize={'12px'}>{tempList.tokens.length} tokens</TYPE.main>
+                                    <Type.Body fontWeight={600}>{tempList.name}</Type.Body>
+                                    <Type.Main fontSize={'12px'}>{tempList.tokens.length} tokens</Type.Main>
                                 </AutoColumn>
                             </RowFixed>
                             {isImported ? (
@@ -363,7 +363,7 @@ function ManageLists({
                                     <IconWrapper stroke={theme.text2} size="16px" marginRight={'10px'}>
                                         <CheckCircle />
                                     </IconWrapper>
-                                    <TYPE.body color={theme.text2}>Loaded</TYPE.body>
+                                    <Type.Body color={theme.text2}>Loaded</Type.Body>
                                 </RowFixed>
                             ) : (
                                 <ButtonPrimary

@@ -8,8 +8,8 @@ export default function Card({
     description = '',
     children,
     className,
-    padding = undefined
-}: any) {
+    padding = ''
+}: any): JSX.Element {
     return (
         <div
             className={`relative ${className}`}

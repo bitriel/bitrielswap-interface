@@ -1,4 +1,4 @@
-import { Currency, Pair, ChainId } from '@sushiswap/sdk'
+import { Currency, Pair, ChainId } from '@bitrielswap/sdk'
 import { darken } from 'polished'
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
@@ -145,7 +145,7 @@ export default function CurrencyInputPanel({
     cornerRadiusBottomNone,
     cornerRadiusTopNone,
     containerBackground
-}: CurrencyInputPanelProps) {
+}: CurrencyInputPanelProps): JSX.Element {
     const { i18n } = useLingui()
     const [modalOpen, setModalOpen] = useState(false)
     const { account, chainId } = useActiveWeb3React()
@@ -171,11 +171,11 @@ export default function CurrencyInputPanel({
                 {/* {!hideInput && (
                     <LabelRow>
                         <RowBetween>
-                            <TYPE.body color={theme.text3} fontWeight={500} fontSize={14}>
+                            <Type.Body color={theme.text3} fontWeight={500} fontSize={14}>
                                 {label}
-                            </TYPE.body>
+                            </Type.Body>
                             {account && (
-                                <TYPE.body
+                                <Type.Body
                                     onClick={onMax}
                                     color={theme.text3}
                                     fontWeight={500}
@@ -185,7 +185,7 @@ export default function CurrencyInputPanel({
                                     {!hideBalance && !!currency && selectedCurrencyBalance
                                         ? (customBalanceText ?? 'Balance: ') + selectedCurrencyBalance?.toSignificant(6)
                                         : ' -'}
-                                </TYPE.body>
+                                </Type.Body>
                             )}
                         </RowBetween>
                     </LabelRow>

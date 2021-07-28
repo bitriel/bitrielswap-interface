@@ -1,4 +1,4 @@
-import { Currency, ETHER, JSBI, TokenAmount } from '@sushiswap/sdk'
+import { Currency, ETHER, JSBI, TokenAmount } from '@bitrielswap/sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import { Plus } from 'react-feather'
 import { Text } from 'rebass'
@@ -14,7 +14,7 @@ import { PairState, usePair } from '../../data/Reserves'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { usePairAdder } from '../../state/user/hooks'
 import { useTokenBalance } from '../../state/wallet/hooks'
-import { StyledInternalLink, TYPE } from '../../theme'
+import { StyledInternalLink, Type } from '../../theme'
 import { currencyId } from '../../utils/currencyId'
 import { Dots } from '../Pool/styleds'
 import { Helmet } from 'react-helmet'
@@ -91,12 +91,12 @@ export default function PoolFinder() {
                 <AutoColumn style={{ padding: '1rem' }} gap="md">
                     <BlueCard>
                         <AutoColumn gap="10px">
-                            <TYPE.link fontWeight={400} color={'primaryText1'}>
+                            <Type.Link fontWeight={400} color={'primaryText1'}>
                                 <Trans>
                                     <b>Tip:</b> Use this tool to find pairs that don&apos;t automatically appear in the
                                     interface
                                 </Trans>
-                            </TYPE.link>
+                            </Type.Link>
                         </AutoColumn>
                     </BlueCard>
                     <ButtonDropdownLight

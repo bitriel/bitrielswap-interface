@@ -1,4 +1,4 @@
-import { Currency } from '@sushiswap/sdk'
+import { Currency } from '@bitrielswap/sdk'
 import React from 'react'
 import styled from 'styled-components'
 import CurrencyLogo from '../CurrencyLogo'
@@ -30,7 +30,7 @@ export default function DoubleCurrencyLogo({
     currency1,
     size = 16,
     margin = false
-}: DoubleCurrencyLogoProps) {
+}: DoubleCurrencyLogoProps): JSX.Element {
     return (
         <Wrapper sizeraw={size} margin={margin}>
             {currency0 && <HigherLogo currency={currency0} size={size.toString() + 'px'} />}

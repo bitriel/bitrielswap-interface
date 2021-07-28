@@ -112,7 +112,7 @@ const BlueCardStyled = styled(Card)`
     width: fit-content;
 `
 
-export const BlueCard = ({ children, ...rest }: CardProps) => {
+export const BlueCard = ({ children, ...rest }: CardProps): JSX.Element => {
     return (
         <BlueCardStyled {...rest}>
             <Text fontWeight={500} color="#0094ec">

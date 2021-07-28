@@ -1,4 +1,4 @@
-import { JSBI, Pair, Percent, TokenAmount } from '@sushiswap/sdk'
+import { JSBI, Pair, Percent, TokenAmount } from '@bitrielswap/sdk'
 import { darken, transparentize } from 'polished'
 import React, { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
@@ -10,7 +10,7 @@ import { useTotalSupply } from '../../data/TotalSupply'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useColor } from '../../hooks/useColor'
 import { useTokenBalance } from '../../state/wallet/hooks'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import { currencyId } from '../../utils/currencyId'
 import { unwrappedToken } from '../../utils/wrappedCurrency'
 import { ButtonEmpty, ButtonPrimary, ButtonPrimaryNormal } from '../ButtonLegacy'
@@ -50,7 +50,7 @@ interface PositionCardProps {
     stakedBalance?: TokenAmount // optional balance to indicate that liquidity is deposited in mining pool
 }
 
-export function MinimalPositionCard({ pair, showUnwrapped = false, border }: PositionCardProps) {
+export function MinimalPositionCard({ pair, showUnwrapped = false, border }: PositionCardProps): JSX.Element {
     const { i18n } = useLingui()
     const { account, chainId } = useActiveWeb3React()
 
@@ -120,7 +120,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
     )
 }
 
-export default function FullPositionCard({ pair, border, stakedBalance }: PositionCardProps) {
+export default function FullPositionCard({ pair, border, stakedBalance }: PositionCardProps): JSX.Element {
     const { i18n } = useLingui()
     const { account, chainId } = useActiveWeb3React()
 

@@ -31,7 +31,7 @@ export default function Loader({
     size?: string
     stroke?: string
     [k: string]: any
-}) {
+}): JSX.Element {
     return (
         <StyledSVG
             viewBox="0 0 24 24"

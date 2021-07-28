@@ -1,11 +1,11 @@
-import { Trade, TradeType } from '@sushiswap/sdk'
+import { Trade, TradeType } from '@bitrielswap/sdk'
 import React, { useContext, useMemo, useState } from 'react'
 import { Repeat } from 'react-feather'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { Field } from '../../state/swap/actions'
-import { TYPE } from '../../theme'
+import { Type } from '../../theme'
 import {
     computeSlippageAdjustedAmounts,
     computeTradePriceBreakdown,
@@ -73,11 +73,11 @@ export default function SwapModalFooter({
 
                 <RowBetween>
                     <RowFixed>
-                        <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
+                        <Type.Black fontSize={14} fontWeight={400} color={theme.text2}>
                             {trade.tradeType === TradeType.EXACT_INPUT
                                 ? i18n._(t`Minimum received`)
                                 : i18n._(t`Maximum sold`)}
-                        </TYPE.black>
+                        </Type.Black>
                         <QuestionHelper
                             text={i18n._(
                                 t`Your transaction will revert if there is a large, unfavorable price movement before it is confirmed.`
@@ -85,23 +85,23 @@ export default function SwapModalFooter({
                         />
                     </RowFixed>
                     <RowFixed>
-                        <TYPE.black fontSize={14}>
+                        <Type.Black fontSize={14}>
                             {trade.tradeType === TradeType.EXACT_INPUT
                                 ? slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4) ?? '-'
                                 : slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4) ?? '-'}
-                        </TYPE.black>
-                        <TYPE.black fontSize={14} marginLeft={'4px'}>
+                        </Type.Black>
+                        <Type.Black fontSize={14} marginLeft={'4px'}>
                             {trade.tradeType === TradeType.EXACT_INPUT
                                 ? trade.outputAmount.currency.getSymbol(chainId)
                                 : trade.inputAmount.currency.getSymbol(chainId)}
-                        </TYPE.black>
+                        </Type.Black>
                     </RowFixed>
                 </RowBetween>
                 <RowBetween>
                     <RowFixed>
-                        <TYPE.black color={theme.text2} fontSize={14} fontWeight={400}>
+                        <Type.Black color={theme.text2} fontSize={14} fontWeight={400}>
                             {i18n._(t`Price Impact`)}
-                        </TYPE.black>
+                        </Type.Black>
                         <QuestionHelper
                             text={i18n._(t`The difference between the market price and your price due to trade size.`)}
                         />
@@ -110,20 +110,20 @@ export default function SwapModalFooter({
                 </RowBetween>
                 <RowBetween>
                     <RowFixed>
-                        <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
+                        <Type.Black fontSize={14} fontWeight={400} color={theme.text2}>
                             {i18n._(t`Liquidity Provider Fee`)}
-                        </TYPE.black>
+                        </Type.Black>
                         <QuestionHelper
                             text={i18n._(
                                 t`A portion of each trade (0.25%) goes to liquidity providers as a protocol incentive.`
                             )}
                         />
                     </RowFixed>
-                    <TYPE.black fontSize={14}>
+                    <Type.Black fontSize={14}>
                         {realizedLPFee
                             ? realizedLPFee?.toSignificant(6) + ' ' + trade.inputAmount.currency.getSymbol(chainId)
                             : '-'}
-                    </TYPE.black>
+                    </Type.Black>
                 </RowBetween>
             </AutoColumn>
 
