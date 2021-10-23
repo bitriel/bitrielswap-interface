@@ -157,7 +157,7 @@ export default function Swap() {
         [independentField]: typedValue,
         [dependentField]: showWrap
             ? parsedAmounts[independentField]?.toExact() ?? ''
-            : parsedAmounts[dependentField]?.toSignificant(6) ?? ''
+            : parsedAmounts[dependentField]?.toSignificant(8) ?? ''
     }
 
     const route = trade?.route
